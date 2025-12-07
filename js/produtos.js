@@ -4,11 +4,19 @@
 
 const PRODUTOS = [
 	{
+		id: 6,
+		nome: "Cubo infinito Anti-stress",
+		preco: 10,
+		descricao: "Cubo infinito anti-stress com várias faces para manipular.",
+		categorias: ["Anti-stress","destaque"],
+		imagens: ["0061.jpg","0062.jpg","0063.jpg"]
+	},
+	{
 		id: 1,
 		nome: "Vaso Porta-Copos",
 		preco: 40,
 		descricao: "Porta Copos decorativo em formato de vaso.",
-		categorias: ["organizacao","decoracao","presente"],
+		categorias: ["Organização","Decoração","Presente"],
 		imagens: ["0011.jpg", "0012.jpg"]
 	},
 	{
@@ -16,7 +24,7 @@ const PRODUTOS = [
 		nome: "Chaveiro Mini Anti-stress Círculo",
 		preco: 4,
 		descricao: "Chaveiro pequeno anti-stress circular.",
-		categorias: ["chaveiros","anti-stress"],
+		categorias: ["chaveiros","Anti-stress"],
 		imagens: ["0021.jpg","0022.jpg","0023.jpg", "0024.jpg"]
 	},
 	{
@@ -24,7 +32,7 @@ const PRODUTOS = [
 		nome: "Spinner Planetário Anti-stress",
 		preco: 10,
 		descricao: "Spinner planetário com engrenagens anti-stress.",
-		categorias: ["anti-stress"],
+		categorias: ["Anti-stress"],
 		imagens: ["0031.jpg"]
 	},
 	{
@@ -32,7 +40,15 @@ const PRODUTOS = [
 		nome: "Chaveiro Mini Anti-stress hexágono",
 		preco: 4,
 		descricao: "Chaveiro pequeno anti-stress hexagonal.",
-		categorias: ["chaveiros","presente"],
+		categorias: ["chaveiros","Presente"],
 		imagens: ["0041.jpg","0042.jpg","0043.jpg"]
+	},
+	{
+		id: 5,
+		nome: "Descanso de Copos Harry Potter",
+		preco: 25,
+		descricao: "Descanso de copos com tema Harry Potter.",
+		categorias: ["Organização","Presente"],
+		imagens: ["0051.jpg","0052.jpg","0053.jpg"]
 	}
 ];
