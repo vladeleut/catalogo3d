@@ -5,10 +5,10 @@
 const PRODUTOS = [
 	{
 		id: 6,
-		nome: "Cubo infinito Anti-stress",
+		nome: "Cubo infinito Antiestresse",
 		preco: 10,
-		descricao: "Cubo infinito anti-stress com várias faces para manipular.",
-		categorias: ["Anti-stress","destaque"],
+		descricao: "Cubo infinito antiestresse com várias faces para manipular.",
+		categorias: ["Antiestresse","destaque"],
 		imagens: ["0061.jpg","0062.jpg","0063.jpg"]
 	},
 	{
@@ -21,25 +21,25 @@ const PRODUTOS = [
 	},
 	{
 		id: 2,
-		nome: "Chaveiro Mini Anti-stress Círculo",
+		nome: "Chaveiro Mini Antiestresse Círculo",
 		preco: 4,
-		descricao: "Chaveiro pequeno anti-stress circular.",
-		categorias: ["chaveiros","Anti-stress"],
+		descricao: "Chaveiro pequeno antiestresse circular.",
+		categorias: ["chaveiros","Antiestresse"],
 		imagens: ["0021.jpg","0022.jpg","0023.jpg", "0024.jpg"]
 	},
 	{
 		id: 3,
-		nome: "Spinner Planetário Anti-stress",
+		nome: "Spinner Planetário Antiestresse",
 		preco: 10,
-		descricao: "Spinner planetário com engrenagens anti-stress.",
-		categorias: ["Anti-stress"],
+		descricao: "Spinner planetário com engrenagens antiestresse.",
+		categorias: ["Antiestresse"],
 		imagens: ["0031.jpg"]
 	},
 	{
 		id: 4,
-		nome: "Chaveiro Mini Anti-stress hexágono",
+		nome: "Chaveiro Mini Antiestresse hexágono",
 		preco: 4,
-		descricao: "Chaveiro pequeno anti-stress hexagonal.",
+		descricao: "Chaveiro pequeno antiestresse hexagonal.",
 		categorias: ["chaveiros","Presente"],
 		imagens: ["0041.jpg","0042.jpg","0043.jpg"]
 	},
