@@ -1,17 +1,56 @@
 function renderizarCategorias() {
-const categoriasUnicas = [...new Set(PRODUTOS.map(p => p.categoria))];
-const nav = document.getElementById("categorias");
+  // extrai categorias únicas mesmo quando produto tem várias
+  const all = PRODUTOS.flatMap(p => p.categorias || (p.categoria ? [p.categoria] : []));
+  const categoriasUnicas = [...new Set(all)];
 
+  // renderiza no sidebar se existir
+  const sidebar = document.getElementById('sidebarCategorias');
+  const nav = document.getElementById('categorias');
 
-nav.innerHTML = `<a href="?">Todos</a>` +
-categoriasUnicas.map(c => `<a href="?categoria=${c}">${c}</a>`).join("");
+  const catButtons = ['<li><button class="cat-btn" data-cat="">Todos</button></li>']
+    .concat(categoriasUnicas.map(c => `<li><button class="cat-btn" data-cat="${c}">${c}</button></li>`));
+
+  if (sidebar) sidebar.innerHTML = catButtons.join('');
+  if (nav) nav.innerHTML = `<a href="?">Todos</a>` + categoriasUnicas.map(c => `<a href="?categoria=${c}">${c}</a>`).join("");
+
+  // attach handlers to sidebar buttons
+  if (sidebar) {
+    [...sidebar.querySelectorAll('.cat-btn')].forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat') || '';
+        selectCategory(cat);
+      });
+    });
+    // marcar a categoria ativa de acordo com URL
+    const params = new URLSearchParams(window.location.search);
+    const current = params.get('categoria') || '';
+    [...sidebar.querySelectorAll('.cat-btn')].forEach(b => b.classList.toggle('active', (b.getAttribute('data-cat')||'')===current));
+  }
 }
 
 
 function filtrarPorCategoria(lista) {
-const params = new URLSearchParams(window.location.search);
-const cat = params.get("categoria");
-return cat ? lista.filter(p => p.categoria === cat) : lista;
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get("categoria") || '';
+  if (!cat) return lista;
+  return lista.filter(p => {
+    const cats = p.categorias || (p.categoria ? [p.categoria] : []);
+    return cats.includes(cat);
+  });
+}
+
+function selectCategory(cat){
+  const params = new URLSearchParams(window.location.search);
+  if (cat) params.set('categoria', cat); else params.delete('categoria');
+  const qs = params.toString();
+  const url = qs ? `?${qs}` : window.location.pathname;
+  history.pushState(null,'',url);
+  // update active classes in sidebar
+  const sidebar = document.getElementById('sidebarCategorias');
+  if (sidebar) {
+    [...sidebar.querySelectorAll('.cat-btn')].forEach(b => b.classList.toggle('active', (b.getAttribute('data-cat')||'')===cat));
+  }
+  renderizarProdutos();
 }
 
 function filtrarPorPesquisa(lista) {
@@ -64,5 +103,17 @@ function setupSearch(){
 }
 
 setupSearch();
+
+function setupSidebar(){
+  const open = document.getElementById('openSidebar');
+  const close = document.getElementById('closeSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const sidebar = document.getElementById('sidebar');
+  if(open) open.addEventListener('click', ()=>{ if(sidebar) sidebar.classList.add('open'); if(overlay) overlay.classList.add('show'); });
+  if(close) close.addEventListener('click', ()=>{ if(sidebar) sidebar.classList.remove('open'); if(overlay) overlay.classList.remove('show'); });
+  if(overlay) overlay.addEventListener('click', ()=>{ if(sidebar) sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+}
+
+setupSidebar();
 
 renderizarProdutos();

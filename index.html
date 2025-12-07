@@ -8,13 +8,24 @@
 </head>
 <body>
 <header>
-<h1>Catálogo VlaDDD</h1>
-</header>
+	<h1>Catálogo VlaDDD</h1>
+	</header>
+
+<!-- SIDEBAR (categorias) -->
+<aside id="sidebar" class="sidebar" aria-hidden="true">
+	<div class="sidebar-inner">
+		<button id="closeSidebar" aria-label="Fechar menu" class="sidebar-close">✕</button>
+		<h3 style="margin-top:0">Categorias</h3>
+		<ul id="sidebarCategorias"></ul>
+	</div>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
  
 <!-- BARRA DE BUSCA -->
-<div id="searchBar" style="padding:10px;text-align:center;">
-	<input id="searchInput" type="search" placeholder="Buscar produtos..." style="width:70%;padding:8px;border-radius:6px;border:1px solid #ccc"> 
-	<button id="searchClear" style="padding:8px 10px;margin-left:6px;border-radius:6px;border:0;background:#333;color:#fff;">Limpar</button>
+<div id="searchBar" style="padding:10px;text-align:center;display:flex;justify-content:center;gap:8px;align-items:center;">
+	<input id="searchInput" type="search" placeholder="Buscar produtos..." style="width:60%;padding:8px;border-radius:6px;border:1px solid #ccc"> 
+	<button id="openSidebar" aria-label="Abrir menu" style="padding:8px 10px;border-radius:6px;border:0;background:#333;color:#fff;">☰</button>
+	<button id="searchClear" style="padding:8px 10px;border-radius:6px;border:0;background:#333;color:#fff;">Limpar</button>
 </div>
 
 <!-- MENU DE CATEGORIAS -->
