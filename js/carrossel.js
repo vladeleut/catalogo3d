@@ -33,5 +33,38 @@ const endX = e.changedTouches[0].clientX;
 if (endX < startX - 40) btnDir.onclick();
 if (endX > startX + 40) btnEsq.onclick();
 });
+
+ // clique na imagem abre modal (se existir)
+ imagens.forEach(img => {
+	 img.style.cursor = 'pointer';
+	 img.addEventListener('click', () => {
+		 if (typeof openImageModal === 'function') openImageModal(img.src);
+	 });
+ });
 });
 }
+
+// Image modal helpers (useful if index.html contains the modal markup)
+function openImageModal(src){
+	const modal = document.getElementById('imageModal');
+	const img = document.getElementById('imageModalImg');
+	if(!modal || !img) return;
+	img.src = src;
+	modal.classList.add('show');
+}
+
+function closeImageModal(){
+	const modal = document.getElementById('imageModal');
+	const img = document.getElementById('imageModalImg');
+	if(!modal || !img) return;
+	modal.classList.remove('show');
+	img.src = '';
+}
+
+// attach modal close handlers if markup exists
+document.addEventListener('DOMContentLoaded', () => {
+	const backdrop = document.getElementById('imageModalBackdrop');
+	const closeBtn = document.getElementById('closeImageModal');
+	if (backdrop) backdrop.addEventListener('click', closeImageModal);
+	if (closeBtn) closeBtn.addEventListener('click', closeImageModal);
+});
