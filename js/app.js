@@ -1,0 +1,50 @@
+function renderizarCategorias() {
+const categoriasUnicas = [...new Set(PRODUTOS.map(p => p.categoria))];
+const nav = document.getElementById("categorias");
+
+
+nav.innerHTML = `<a href="?">Todos</a>` +
+categoriasUnicas.map(c => `<a href="?categoria=${c}">${c}</a>`).join("");
+}
+
+
+function filtrarPorCategoria(lista) {
+const params = new URLSearchParams(window.location.search);
+const cat = params.get("categoria");
+return cat ? lista.filter(p => p.categoria === cat) : lista;
+}
+
+
+function renderizarProdutos() {
+renderizarCategorias();
+
+
+let lista = filtrarPorCategoria(PRODUTOS);
+let pagina = paginarProdutos(lista);
+
+
+document.getElementById("listaProdutos").innerHTML = pagina.map(p => `
+<div class='produto'>
+<div class='carousel'>
+<button class='btn-esq'>❮</button>
+<button class='btn-dir'>❯</button>
+${p.imagens.map((img, i) => 
+  `<img src="img/produtos/${img}" class="${i === 0 ? 'active' : ''}">`
+).join('')}
+
+</div>
+<h3>${p.nome}</h3>
+<p>${p.descricao}</p>
+<b>R$ ${p.preco.toFixed(2)}</b>
+<button class='cart' onclick='addCarrinho(${JSON.stringify(p)})'>Adicionar</button>
+</div>
+`).join('');
+
+
+iniciarCarrosseis();
+renderizarPaginacao(lista.length);
+atualizarCarrinhoUI();
+}
+
+
+renderizarProdutos();
