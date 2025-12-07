@@ -14,12 +14,21 @@ const cat = params.get("categoria");
 return cat ? lista.filter(p => p.categoria === cat) : lista;
 }
 
+function filtrarPorPesquisa(lista) {
+const input = document.getElementById('searchInput');
+if(!input) return lista;
+const q = input.value.trim().toLowerCase();
+if(!q) return lista;
+return lista.filter(p => (p.nome || '').toLowerCase().includes(q) || (p.descricao || '').toLowerCase().includes(q));
+}
+
 
 function renderizarProdutos() {
 renderizarCategorias();
 
 
 let lista = filtrarPorCategoria(PRODUTOS);
+lista = filtrarPorPesquisa(lista);
 let pagina = paginarProdutos(lista);
 
 
@@ -46,5 +55,14 @@ renderizarPaginacao(lista.length);
 atualizarCarrinhoUI();
 }
 
+function setupSearch(){
+  const input = document.getElementById('searchInput');
+  if(!input) return;
+  input.addEventListener('input', ()=> renderizarProdutos());
+  const clearBtn = document.getElementById('searchClear');
+  if(clearBtn) clearBtn.addEventListener('click', ()=>{ input.value=''; renderizarProdutos(); });
+}
+
+setupSearch();
 
 renderizarProdutos();

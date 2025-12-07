@@ -8,13 +8,17 @@
 </head>
 <body>
 <header>
-<h1>Catálogo 3D Prints</h1>
+<h1>Catálogo VlaDDD</h1>
 </header>
-
+ 
+<!-- BARRA DE BUSCA -->
+<div id="searchBar" style="padding:10px;text-align:center;">
+	<input id="searchInput" type="search" placeholder="Buscar produtos..." style="width:70%;padding:8px;border-radius:6px;border:1px solid #ccc"> 
+	<button id="searchClear" style="padding:8px 10px;margin-left:6px;border-radius:6px;border:0;background:#333;color:#fff;">Limpar</button>
+</div>
 
 <!-- MENU DE CATEGORIAS -->
-<nav id="categorias"></nav>
-
+<nav id="categorias" style="display:none;"></nav>
 
 <!-- LISTA DE PRODUTOS DINÂMICA -->
 <div id="listaProdutos"></div>
@@ -33,12 +37,23 @@
 <div id="carrinhoBox">
 <h2>Seu Carrinho</h2>
 <ul id="listaCarrinho"></ul>
-<button id="enviarZap">Enviar WhatsApp</button>
+<div style="display:flex;gap:8px;margin-top:10px">
+	<button id="enviarZap">Enviar WhatsApp</button>
+	<button id="limparCarrinho" style="background:#e53e3e;color:#fff;border:none;padding:8px;border-radius:6px;">Limpar</button>
+</div>
 </div>
 </div>
 
 
 <script src="js/produtos.js"></script>
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="image-modal" role="dialog" aria-hidden="true">
+	<div class="image-modal-backdrop" id="imageModalBackdrop"></div>
+	<div class="image-modal-content" role="document">
+		<button id="closeImageModal" aria-label="Fechar">✕</button>
+		<img id="imageModalImg" src="" alt="Imagem ampliada">
+	</div>
+</div>
 <script src="js/carrossel.js"></script>
 <script src="js/carrinho.js"></script>
 <script src="js/paginacao.js"></script>
