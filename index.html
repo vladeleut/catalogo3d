@@ -8,8 +8,8 @@
 </head>
 <body>
 <header>
-	<h1>Catálogo VlaDDD</h1>
-	</header>
+  <h1 id="siteTitle" style="cursor:pointer">Catálogo VlaDDD</h1>
+  </header>
 
 <!-- SIDEBAR (categorias) -->
 <aside id="sidebar" class="sidebar" aria-hidden="true">
@@ -17,6 +17,13 @@
 		<button id="closeSidebar" aria-label="Fechar menu" class="sidebar-close">✕</button>
 		<h3 style="margin-top:0">Categorias</h3>
 		<ul id="sidebarCategorias"></ul>
+
+		<!-- Fale conosco section -->
+		<div style="margin-top:16px;border-top:1px solid #eee;padding-top:12px">
+			<h4 style="margin:0 0 8px 0">Fale conosco</h4>
+			<p style="margin:0 0 8px 0;font-size:13px;color:#555">Dúvidas? Envie uma mensagem ou email.</p>
+			<button id="openContact" class="sidebar-contact-btn" style="padding:8px 10px;border-radius:6px;border:0;background:#0369a1;color:#fff">Contato</button>
+		</div>
 	</div>
 </aside>
 <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
@@ -40,7 +47,9 @@
 
 
 <!-- BOTÃO DO CARRINHO -->
-<button id="abrirCarrinho">🛒</button>
+<div id="fabContainer" class="fab-container" style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+	<button id="abrirCarrinho" class="fab-cart" style="background:#0369a1;color:white;border:none;padding:12px;border-radius:999px;font-size:18px">🛒</button>
+</div>
 
 
 <!-- MODAL DO CARRINHO -->
@@ -49,10 +58,31 @@
 <h2>Seu Carrinho</h2>
 <ul id="listaCarrinho"></ul>
 <div style="display:flex;gap:8px;margin-top:10px">
-	<button id="enviarZap">Enviar WhatsApp</button>
-	<button id="limparCarrinho" style="background:#e53e3e;color:#fff;border:none;padding:8px;border-radius:6px;">Limpar</button>
+		<button id="enviarZap" style="padding:8px 12px;border-radius:6px;border:0;background:#25d366;color:#fff">Enviar WhatsApp</button>
+		<button id="enviarEmail" style="padding:8px 12px;border-radius:6px;border:0;background:#333;color:#fff">Enviar por Email</button>
+		<button id="limparCarrinho" style="background:#e53e3e;color:#fff;border:none;padding:8px;border-radius:6px;">Limpar</button>
 </div>
 </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="color-modal" role="dialog" aria-hidden="true">
+	<div class="color-modal-backdrop" id="contactModalBackdrop"></div>
+	<div class="color-modal-content" role="document">
+		<button id="closeContactModal" aria-label="Fechar">✕</button>
+		<h3 style="margin-top:0">Contato</h3>
+		<div style="margin-top:8px">
+			<label>Nome<br><input id="contactName" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc"></label>
+		</div>
+		<!-- removed contact email field: user will send from their own address -->
+		<div style="margin-top:8px">
+			<label>Mensagem<br><textarea id="contactMessage" rows="4" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc"></textarea></label>
+		</div>
+		<div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+			<button id="contactSendEmail" style="padding:8px 12px;border-radius:6px;border:0;background:#333;color:#fff">Enviar por Email</button>
+			<button id="contactSendWhatsApp" style="padding:8px 12px;border-radius:6px;border:0;background:#25d366;color:#fff">Enviar por WhatsApp</button>
+		</div>
+	</div>
 </div>
 
 
@@ -65,7 +95,21 @@
 		<img id="imageModalImg" src="" alt="Imagem ampliada">
 	</div>
 </div>
+<!-- COLOR PICKER MODAL -->
+<div id="colorModal" class="color-modal" role="dialog" aria-hidden="true">
+	<div class="color-modal-backdrop" id="colorModalBackdrop"></div>
+	<div class="color-modal-content" role="document">
+		<button id="closeColorModal" aria-label="Fechar">✕</button>
+		<h3 style="margin-top:0">Escolha uma cor</h3>
+		<div id="colorSwatches" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"></div>
+		<div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+			<button id="cancelColor" style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:transparent">Cancelar</button>
+			<button id="confirmColor" style="padding:8px 12px;border-radius:6px;border:0;background:#333;color:#fff">Adicionar ao carrinho</button>
+		</div>
+	</div>
+</div>
 <script src="js/carrossel.js"></script>
+<script src="js/cores.js"></script>
 <script src="js/carrinho.js"></script>
 <script src="js/paginacao.js"></script>
 <script src="js/app.js"></script>
