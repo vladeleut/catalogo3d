@@ -21,9 +21,10 @@
           <h2 style="margin-top:0">${prod.nome}</h2>
           <p style="color:#444">${prod.descricao || ''}</p>
           <b style="display:block;margin-top:8px">R$ ${prod.preco.toFixed(2)}</b>
+          <div style="margin-top:6px;color:#666">Vendidos: ${prod.vendidos || 0}</div>
           <div style="margin-top:12px;display:flex;gap:8px">
             <button id="addToCartProduct" style="padding:8px 12px;border-radius:6px;border:0;background:#0369a1;color:#fff">Adicionar ao carrinho</button>
-            <button id="sendWhatsProduct" style="padding:8px 12px;border-radius:6px;border:0;background:#25d366;color:#fff">Enviar por WhatsApp</button>
+            <button id="shareProduct" style="padding:8px 12px;border-radius:6px;border:0;background:#06b6d4;color:#fff">Compartilhar no WhatsApp</button>
           </div>
         </div>
       </div>
@@ -35,23 +36,24 @@
     });
 
     const addBtn = el('addToCartProduct');
-    const sendBtn = el('sendWhatsProduct');
-    if(!addBtn || !sendBtn) return;
+    const shareBtn = el('shareProduct');
+    if(!addBtn || !shareBtn) return;
 
     addBtn.addEventListener('click', ()=>{
       if(Array.isArray(COLORS) && COLORS.length>0){
-        openColorPickerProduct(prod.id, 'cart');
+        openColorPickerProduct(prod.id);
       } else {
         if(typeof addCarrinho === 'function') addCarrinho(prod, null);
       }
     });
 
-    sendBtn.addEventListener('click', ()=>{
-      if(Array.isArray(COLORS) && COLORS.length>0){
-        openColorPickerProduct(prod.id, 'send');
-      } else {
-        sendWhatsSingle(prod, null);
-      }
+    shareBtn.addEventListener('click', ()=>{
+      // build friendly share message and open WhatsApp (user picks contact)
+      const origin = window.location && window.location.origin ? window.location.origin : '';
+      const link = origin + window.location.pathname.replace(/[^\/]*$/, 'product.html') + `?produto=${encodeURIComponent(prod.id)}`;
+      const msg = `Olha que legal este produto que encontrei!\n${prod.nome}\n${link}`;
+      const url = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
     });
   }
 
