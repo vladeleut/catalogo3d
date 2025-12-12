@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Produto - Catálogo 3D Prints</title>
+  <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+  <header>
+    <h1 style="cursor:pointer"><a href="index.html" style="color:white;text-decoration:none">Catálogo VlaDDD</a></h1>
+  </header>
+
+  <main style="padding:16px;max-width:900px;margin:0 auto">
+    <div id="productContainer">Carregando produto...</div>
+  </main>
+
+  <!-- Color picker modal (product-specific) -->
+  <div id="colorModalProduct" class="color-modal" role="dialog" aria-hidden="true">
+    <div class="color-modal-backdrop" id="colorModalProductBackdrop"></div>
+    <div class="color-modal-content" role="document">
+      <button id="closeColorModalProduct" aria-label="Fechar">✕</button>
+      <h3 style="margin-top:0">Escolha uma cor</h3>
+      <div id="colorSwatchesProduct" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button id="cancelColorProduct" style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:transparent">Cancelar</button>
+        <button id="confirmColorProduct" style="padding:8px 12px;border-radius:6px;border:0;background:#333;color:#fff">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image modal (product) -->
+  <div id="imageModalProduct" class="image-modal">
+    <div class="image-modal-backdrop" id="imageModalProductBackdrop"></div>
+    <div class="image-modal-content">
+      <button id="closeImageModalProduct">✕</button>
+      <img id="imageModalProductImg" src="" alt="Imagem">
+    </div>
+  </div>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/cores.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

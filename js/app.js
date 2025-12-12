@@ -103,10 +103,10 @@ ${p.imagens.map((img, i) =>
 ).join('')}
 
 </div>
-<h3>${p.nome}</h3>
+<h3><a href="product.html?produto=${p.id}" style="color:inherit;text-decoration:none">${p.nome}</a></h3>
 <p>${p.descricao}</p>
 <b>R$ ${p.preco.toFixed(2)}</b>
-<button class='cart' data-id='${p.id}'>Adicionar</button>
+<button class='cart' data-id='${p.id}'>Adicionar ao carrinho</button>
 </div>
 `).join('');
 
