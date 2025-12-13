@@ -1,8 +1,28 @@
-// Você só mexe AQUI
-// Basta adicionar ou remover itens neste array
-
-
 const PRODUTOS = [
+	{
+		id: 14,
+		nome: "Spinner Geométrico Planetário",
+		preco: 30,
+		descricao: "Spinner geométrico planetário com design único e inovador",
+		categorias: ["Antiestresse","Destaque","Novidades","Presentes"],
+		imagens: ["0141.gif","0142.jpg","0143.jpg"]
+	},
+	{
+		id: 15,
+		nome: "Dado Giratório Automático",
+		preco: 20,
+		descricao: "Não perca mais seu dado ao lançar! Ideal para jogos de tabuleiro e RPGs. Basta pressionar um botão e assistir ao dado girar e parar em um número aleatório.",
+		categorias: ["Jogos","Novidades"],
+		imagens: ["0151.gif","0152.jpg"]
+	},
+	{
+		id: 16,
+		nome: "Porta Remédio Giratóro",
+		preco: 45,
+		descricao: "Porta remédio giratório com compartimentos para organizar seus medicamentos diários de forma prática.",
+		categorias: ["Novidades","Organização","Saúde"],
+		imagens: ["0161.gif","0162.jpg","0163.jpg"]
+	},
 	{
 		id: 6,
 		nome: "Cubo infinito Antiestresse",
