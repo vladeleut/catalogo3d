@@ -7,10 +7,18 @@ function renderizarCategorias() {
   const sidebar = document.getElementById('sidebarCategorias');
   const nav = document.getElementById('categorias');
 
-  const catButtons = ['<li><button class="cat-btn" data-cat="">Todos</button></li>']
-    .concat(categoriasUnicas.map(c => `<li><button class="cat-btn" data-cat="${c}">${c}</button></li>`));
+  // build buttons so that "Novidades" appears first and highlighted
+  const catButtonsArr = [];
+  catButtonsArr.push('<li><button class="cat-btn" data-cat="">Todos</button></li>');
+  // detect a 'novidade(s)' label (case-insensitive)
+  const nov = categoriasUnicas.find(c => String(c).toLowerCase().includes('novad') || String(c).toLowerCase().includes('novid') || String(c).toLowerCase() === 'novidades' || String(c).toLowerCase() === 'novidade');
+  if (nov) {
+    catButtonsArr.push(`<li><button class="cat-btn cat-novidade" data-cat="${nov}">${nov}</button></li>`);
+  }
+  // append the rest, excluding detected novidades entry to avoid duplication
+  catButtonsArr.push(...categoriasUnicas.filter(c => String(c).toLowerCase() !== (nov||'').toString().toLowerCase()).map(c => `<li><button class="cat-btn" data-cat="${c}">${c}</button></li>`));
 
-  if (sidebar) sidebar.innerHTML = catButtons.join('');
+  if (sidebar) sidebar.innerHTML = catButtonsArr.join('');
   if (nav) nav.innerHTML = `<a href="?">Todos</a>` + categoriasUnicas.map(c => `<a href="?categoria=${c}">${c}</a>`).join("");
 
   // attach handlers to sidebar buttons
