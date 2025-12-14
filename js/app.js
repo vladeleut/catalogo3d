@@ -19,6 +19,11 @@ function renderizarCategorias() {
       btn.addEventListener('click', () => {
         const cat = btn.getAttribute('data-cat') || '';
         selectCategory(cat);
+        // auto-close sidebar for better UX on mobile
+        const sb = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        if (sb) sb.classList.remove('open');
+        if (overlay) overlay.classList.remove('show');
       });
     });
     // marcar a categoria ativa de acordo com URL

@@ -117,7 +117,7 @@ color:white; border-radius:5px; font-size:16px;
 .sidebar li { margin:6px 0 }
 .sidebar a, .sidebar button.cat-btn { display:block;padding:8px 10px;border-radius:6px;border:0;background:transparent;text-align:left;width:100%;cursor:pointer }
 .sidebar a:hover, .sidebar button.cat-btn:hover { background:#f0f0f0 }
-.sidebar .active { background:#333;color:#fff }
+.sidebar .active { background:#eef2ff; color:#475569 }
 .sidebar-overlay { position:fixed; inset:0;background:rgba(0,0,0,0.4); opacity:0; pointer-events:none; transition:opacity .2s; z-index:9999 }
 .sidebar-overlay.show { opacity:1; pointer-events:auto }
 

@@ -20,6 +20,11 @@
         <div style="flex:2 1 360px;background:#fff;padding:16px;border-radius:8px">
           <h2 style="margin-top:0">${prod.nome}</h2>
           <p style="color:#444">${prod.descricao || ''}</p>
+          ${prod.detalhamento ? `
+            <div class="detalhamento" style="margin-top:10px;background:#f9f9f9;padding:10px;border-radius:6px;color:#333">
+              <div style="margin-top:6px">${prod.detalhamento}</div>
+            </div>
+          ` : ''}
           <b style="display:block;margin-top:8px">R$ ${prod.preco.toFixed(2)}</b>
           <div style="margin-top:6px;color:#666">Vendidos: ${prod.vendidos || 0}</div>
           <div style="margin-top:12px;display:flex;gap:8px">
