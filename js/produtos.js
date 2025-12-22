@@ -1,11 +1,39 @@
 const PRODUTOS = [
+	/*{
+		id: X,
+		nome: "EXEMPLO",
+		preco: X,
+		vendidos: X,
+		descricao: "DESC",
+		categorias: ["Destaque","Novidades","Presentes"],
+		imagens: ["01.jpg","02.jpg","03.jpg"]
+	},*/
+	{
+		id: 19,
+		nome: "Miniatura Banguela - Como Treinar o Seu Dragão",
+		preco: 50,
+		vendidos: 1,
+		descricao: "Miniatura do Personagem Banguela do filme 'Como Treinar o Seu Dragão'. Dragão Fúria da Noite com detalhes incríveis, cauda, asas e membros articulados.",
+		categorias: ["Destaque","Novidades","Presentes","Personagens"],
+		imagens: ["0191.jpg","0192.jpg","0193.jpg","0194.jpg","0195.jpg","0196.jpg"]
+	},
+	{
+		id: 24,
+		nome: "Jogo Cathedral (Tabuleiro de Estratégia)",
+		preco: 200,
+		vendidos: 1,
+		descricao: "Cathedral é um jogo de tabuleiro de estratégia para dois jogadores, onde o objetivo é cercar o maior número possível de áreas dentro das muralhas com suas peças.",
+		detalhamento: "Composto por tabuleiro, 2 conjuntos de peças de cores diferentes, a Catedral e 1 manual de regras.",
+		categorias: ["Destaque","Novidades","Presentes","Jogos"],
+		imagens: ["0241.jpg","0242.jpg","0243.jpg","0244.jpg"]
+	},
 	{
 		id: 14,
 		nome: "Spinner Geométrico Planetário",
 		preco: 30,
 		vendidos: 1,
 		descricao: "Spinner geométrico planetário com design único e inovador",
-		categorias: ["Antiestresse","Destaque","Novidades","Presentes"],
+		categorias: ["Antiestresse","Destaque","Presentes"],
 		imagens: ["0141.gif","0142.jpg","0143.jpg"]
 	},
 	{
@@ -15,7 +43,7 @@ const PRODUTOS = [
 		vendidos: 0,
 		descricao: "Revolucione sua experiência de xadrez com este tabuleiro inspirado na série Harry Potter. Cada peça é meticulosamente detalhada para capturar a essência dos personagens e elementos do universo mágico.",
 		detalhamento: "Disponível em outras cores e times (Grifinória, Sonserina, Corvinal, Lufa-Lufa). Entre em contato para personalização.<br><br><b>Time Grifinória</b><br>Rei: Albus Dumbledore<br>Rainha: Minerva McGonagall Granger<br>Bispos: Sirius Black<br>Cavalos: Bicuço<br>Torres: Torres de Hogwarts<br>Peões: Harry Potter<br><br><b>Time Sonserina</b><br>Rei: Voldemort<br>Rainha: Bellatrix Lestrange<br>Bispos: Severus Snape<br>Cavalos: Serpente<br>Torres: Torres de Hogwarts<br>Peões: Draco Malfoy",
-		categorias: ["Jogos","Decoração","Novidades"],
+		categorias: ["Jogos","Decoração","Destaque","Presentes"],
 		imagens: ["0171.jpg","0172.jpg","0173.jpg","0174.jpg","0175.jpg"]
 	},
 	{
@@ -24,7 +52,7 @@ const PRODUTOS = [
 		preco: 20,
 		vendidos: 0,
 		descricao: "Não perca mais seu dado ao lançar! Ideal para jogos de tabuleiro e RPGs. Basta pressionar um botão e assistir ao dado girar e parar em um número aleatório.",
-		categorias: ["Jogos","Novidades"],
+		categorias: ["Jogos","Acessórios"],
 		imagens: ["0151.gif","0152.jpg"]
 	},
 	{
@@ -33,7 +61,7 @@ const PRODUTOS = [
 		preco: 45,
 		vendidos: 1,
 		descricao: "Porta remédio giratório com compartimentos para organizar seus medicamentos diários de forma prática.",
-		categorias: ["Novidades","Organização","Saúde"],
+		categorias: ["Organização","Saúde"],
 		imagens: ["0161.gif","0162.jpg","0163.jpg"]
 	},
 	{
