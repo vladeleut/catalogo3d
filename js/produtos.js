@@ -15,7 +15,7 @@ const PRODUTOS = [
 		vendidos: 1,
 		descricao: "Miniatura do Personagem Banguela do filme 'Como Treinar o Seu Dragão'. Dragão Fúria da Noite com detalhes incríveis, cauda, asas e membros articulados.",
 		categorias: ["Destaque","Novidades","Presentes","Personagens"],
-		imagens: ["0191.jpg","0192.jpg","0193.jpg","0194.jpg","0195.jpg","0196.jpg"]
+		imagens: ["0196.jpg","0191.jpg","0192.jpg","0193.jpg","0194.jpg","0195.jpg"]
 	},
 	{
 		id: 24,
