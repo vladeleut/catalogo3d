@@ -9,6 +9,26 @@ const PRODUTOS = [
 		imagens: ["01.jpg","02.jpg","03.jpg"]
 	},*/
 	{
+		id: 28,
+		nome: "Drogon - Miniatura Game of Thrones",
+		preco: 199.9,
+		vendidos: 1,
+		descricao: "Miniatura do Dragão Drogon da série Game of Thrones. Detalhes incríveis na cauda, nas asas e no corpo.",
+		detalhamento: "Impressão em alta qualidade com filamento PLA Dual Color Shadow com acabamento único em cada peça.<br><br>Dimensões:<br>Altura: 9 cm<br>Largura: 23,4 cm (Total entre as asas)<br>Comprimento: 24,4 cm (Cabeça até a cauda e fim das asas)<br><br>Base Trono de Ferro vendida separadamente, <a href='https://vladeleut.github.io/catalogo3d/product.html?produto=27'>clique aqui</a> para consultar a peça.</a>",
+		categorias: ["Destaque","Novidades","Colecionáveis","Personagens"],
+		imagens: ["0281.jpg","0282.jpg","0283.jpg","0284.jpg","0285.jpg"]
+	},
+	{
+		id: 27,
+		nome: "Trono de Ferro - Miniatura Game of Thrones",
+		preco: 149.9,
+		vendidos: 1,
+		descricao: "Miniatura do Trono de Ferro da série Game of Thrones. Detalhes incríveis na estrutura e acabamento realista.",
+		detalhamento: "Impressão em alta qualidade.<br><br>Dimensões:<br>Altura: 15 cm<br>Largura: 16,7 cm<br>Comprimento: 16,7 cm <br><br>Dragão Drogon vendido separadamente, <a href='https://vladeleut.github.io/catalogo3d/product.html?produto=28'>clique aqui</a> para consultar a peça.</a>",
+		categorias: ["Destaque","Novidades","Colecionáveis"],
+		imagens: ["0271.jpg","0282.jpg","0272.jpg"]/*reutiliza foto do dragão com o trono*/
+	},
+	{
 		id: 19,
 		nome: "Miniatura Banguela - Como Treinar o Seu Dragão",
 		preco: 50,
@@ -18,13 +38,40 @@ const PRODUTOS = [
 		imagens: ["0196.jpg","0191.jpg","0192.jpg","0193.jpg","0194.jpg","0195.jpg"]
 	},
 	{
+		id: 25,
+		nome: "Miniatura Stitch articulado",
+		preco: 45,
+		vendidos: 1,
+		descricao: "Divirta-se com esta miniatura articulada do Stitch. Com aproximadamente 12 cm, esta figura detalhada é perfeita para fãs e colecionadores.",
+		categorias: ["Destaque","Novidades","Presentes","Personagens"],
+		imagens: ["0251.jpg","0252.jpg","0253.jpg","0254.jpg"]
+	},
+	{
+		id: 29,
+		nome: "Pomo de Ouro com Suporte",
+		preco: 25,
+		vendidos: 0,
+		descricao: "Pomo de Ouro, objeto mágico dos jogos de Quadribol da saga Harry Potter. Acompanha suporte decorativo.",
+		categorias: ["Colecionáveis","Decoração","Presentes","Novidades"],
+		imagens: ["0291.jpg","0292.jpg","0293.jpg"]
+	},
+	{
+		id: 26,
+		nome: "Suporte de Mesa ajustável para Celular",
+		preco: 15,
+		vendidos: 1,
+		descricao: "Suporte de mesa ajustável para celular, ideal para assistir vídeos, fazer videochamadas ou ler receitas na cozinha. Compatível com diversos tamanhos de smartphones.",
+		categorias: ["Utilidades","Novidades","Organização"],
+		imagens: ["0261.jpg","0262.jpg","0263.jpg","0264.jpg","0265.jpg"]
+	},
+	{
 		id: 24,
 		nome: "Jogo Cathedral (Tabuleiro de Estratégia)",
 		preco: 200,
 		vendidos: 1,
 		descricao: "Cathedral é um jogo de tabuleiro de estratégia para dois jogadores, onde o objetivo é cercar o maior número possível de áreas dentro das muralhas com suas peças.",
 		detalhamento: "Composto por tabuleiro, 2 conjuntos de peças de cores diferentes, a Catedral e 1 manual de regras.",
-		categorias: ["Destaque","Novidades","Presentes","Jogos"],
+		categorias: ["Destaque","Presentes","Jogos"],
 		imagens: ["0241.jpg","0242.jpg","0243.jpg","0244.jpg"]
 	},
 	{
