@@ -9,6 +9,15 @@ const PRODUTOS = [
 		imagens: ["01.jpg","02.jpg","03.jpg"]
 	},*/
 	{
+		id: 32,
+		nome: "Miniatura Sonic: the Hedgehog",
+		preco: 85,
+		vendidos: 1,
+		descricao: "Miniatura de 15cm do personagem Sonic, o ouriço azul dos videogames e das telonas. Detalhes incríveis na pose dinâmica e expressão facial.",
+		categorias: ["Destaque","Novidades","Presentes","Personagens"],
+		imagens: ["0321.jpg","0322.jpg"]
+	},
+	{
 		id: 28,
 		nome: "Drogon - Miniatura Game of Thrones",
 		preco: 199.9,
@@ -34,7 +43,7 @@ const PRODUTOS = [
 		preco: 50,
 		vendidos: 1,
 		descricao: "Miniatura do Personagem Banguela do filme 'Como Treinar o Seu Dragão'. Dragão Fúria da Noite com detalhes incríveis, cauda, asas e membros articulados.",
-		categorias: ["Destaque","Novidades","Presentes","Personagens"],
+		categorias: ["Destaque","Presentes","Personagens"],
 		imagens: ["0196.jpg","0191.jpg","0192.jpg","0193.jpg","0194.jpg","0195.jpg"]
 	},
 	{
